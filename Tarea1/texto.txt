@@ -1,0 +1,10 @@
+
+Analizador léxico: Un analizador léxico permite que un traductor maneje 
+instrucciones de varios caracteres; como identificadores, que se escriben como 
+secuencias de caracteres, pero se tratan como unidades conocidas como tokens 
+durante el análisis sintáctico; por ejemplo, en la expresión cuenta+1, el 
+identificador cuenta se trata como una unidad.
+Definición de sintaxis: La “gramática” se utiliza para especificar la sintaxis de un 
+lenguaje y a la vez la gramática describe en forma natural la estructura jerárquica 
+de la mayoría de instrucciones de un lenguaje de programación.
+
