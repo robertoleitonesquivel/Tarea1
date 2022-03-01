@@ -33,9 +33,7 @@ public class Archivos {
             String linea;
 
             while ((linea = bf.readLine()) != null) {
-                //Verifico que la linea no este en blanco
-                if (!"".equals(linea)) calcular(linea);
-                totalLineas++;
+                calcular(linea);
             }
 
             bf.close();
@@ -53,11 +51,11 @@ public class Archivos {
             FileWriter fw = new FileWriter(archivoFinal);
             BufferedWriter bw = new BufferedWriter(fw);
 
-            bw.write("Total de Palabras: "+this.totalPalabras+"\n");
-            bw.write("Total Caracteres (sin espacios): "+this.totalCaracteresSinEspacios+"\n");
-            bw.write("Total Caracteres (con espacios): "+this.totalCaracteresConEspacios+"\n");
-            bw.write("Total de líneas: "+this.totalLineas+"\n");
-            
+            bw.write("Total de Palabras: " + this.totalPalabras + "\n");
+            bw.write("Total Caracteres (sin espacios): " + this.totalCaracteresSinEspacios + "\n");
+            bw.write("Total Caracteres (con espacios): " + this.totalCaracteresConEspacios + "\n");
+            bw.write("Total de líneas: " + this.totalLineas + "\n");
+
             bw.close();
             fw.close();
         } catch (IOException ex) {
@@ -68,16 +66,24 @@ public class Archivos {
     //METODO PARA CALCULAR
     public void calcular(String linea) {
         try {
-            //Caracteres con espacios
-            totalCaracteresConEspacios += linea.length();
+            totalLineas++;
 
-            //Total de palabras
-            String[] palabras = linea.split(" ");
-            totalPalabras += palabras.length;
+            //Verifico que la linea no este en blanco
+            if ("".equals(linea)) {
+                totalCaracteresConEspacios++;
+            } else {
 
-            //Total caracteres sin espacios
-            for (int i = 0; i < palabras.length; i++) {
-                totalCaracteresSinEspacios += palabras[i].length();
+                //Caracteres con espacios
+                totalCaracteresConEspacios += linea.length();
+
+                //Total de palabras
+                String[] palabras = linea.split(" ");
+                totalPalabras += palabras.length;
+
+                //Total caracteres sin espacios
+                for (int i = 0; i < palabras.length; i++) {
+                    totalCaracteresSinEspacios += palabras[i].length();
+                }
             }
 
         } catch (Exception ex) {

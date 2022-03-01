@@ -1,4 +1,4 @@
 Total de Palabras: 86
 Total Caracteres (sin espacios): 495
-Total Caracteres (con espacios): 579
+Total Caracteres (con espacios): 581
 Total de líneas: 10
